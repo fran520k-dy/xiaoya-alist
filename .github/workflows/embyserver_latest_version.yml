@@ -2,8 +2,6 @@ name: embyserver latest version
 
 on:
     workflow_dispatch:
-    schedule:
-        - cron: '0 3 */3 * *'
     push:
         branches:
             - master
@@ -16,7 +14,7 @@ jobs:
     steps:
       - 
         name: Checkout
-        uses: actions/checkout@master
+        uses: actions/checkout@v4
 
       -
         name: Get Version Amilys
@@ -33,9 +31,9 @@ jobs:
             sed -i "1,40s|emby_embyserver_latest_version=.*|emby_embyserver_latest_version=${LATEST_VERSION}|" all_in_one.sh
 
       - 
-        uses: stefanzweifel/git-auto-commit-action@ac8823709a85c7ce090849ac3e5fe24d006f6e18
+        uses: stefanzweifel/git-auto-commit-action@v5
         with:
-            commit_message: 'chore: update amilys embyserver latest version'
+            commit_message: 'chore: update embyserver latest version'
             branch: master
             file_pattern: 'all_in_one.sh'
         env:
