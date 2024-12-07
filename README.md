@@ -75,9 +75,10 @@ bash -c "$(curl --insecure -fsSL https://raw.githubusercontent.com/DDS-Derek/xia
 安装 Jellyfin全家桶（一键） -> 3 1
 安装 Resilio-Sync（单独） -> 2 5 1
 安装 Auto_Symlink -> 8 2 1
-安装 CasaOS -> 8 6 1
+安装 CasaOS -> 8 7 1
 安装 小雅元数据定时爬虫 -> 2 9 1
 安装 Xiaoya Proxy -> 8 4 1
+安装 Xiaoya aliyuntvtoken_connector -> 8 5 1
 ——————————————————————————————Emby手动全家桶配置————————————————————————————————————
 单独 下载并解压 全部元数据 -> 2 2 1
 单独 解压 全部元数据 -> 2 2 2
@@ -91,6 +92,7 @@ bash -c "$(curl --insecure -fsSL https://raw.githubusercontent.com/DDS-Derek/xia
 单独 下载 115.mp4 -> 2 2 10
 单独 解压 115.mp4 -> 2 2 11
 解压 115.mp4 的指定元数据目录【非全部解压】-> 2 2 12
+单独 下载并解压 config.new.mp4 -> 2 2 101
 选择 下载器【aria2/wget】-> 2 2 13
 单独 安装Emby（可选择版本，支持官方，amilys，lovechen）-> 2 3
 立即 同步小雅Emby的config目录 -> 2 6
@@ -124,6 +126,7 @@ bash -c "$(curl --insecure -fsSL https://raw.githubusercontent.com/DDS-Derek/xia
 更新 Auto_Symlink -> 8 2 2
 更新 小雅元数据定时爬虫 -> 2 9 2
 更新 Xiaoya Proxy -> 8 4 2
+更新 Xiaoya aliyuntvtoken_connector -> 8 5 1
 ———————————————————————————————————————卸载———————————————————————————————————————
 卸载 小雅Alist -> 1 3
 卸载 Emby全家桶 -> 2 11
@@ -135,18 +138,19 @@ bash -c "$(curl --insecure -fsSL https://raw.githubusercontent.com/DDS-Derek/xia
 卸载 Onelist -> 8 3 3
 卸载 Portainer -> 8 1 3
 卸载 Auto_Symlink -> 8 2 3
-卸载 CasaOS -> 8 6 2
+卸载 CasaOS -> 8 7 2
 卸载 小雅元数据定时爬虫 -> 2 9 3
 卸载 Xiaoya Proxy -> 8 4 3
+卸载 Xiaoya aliyuntvtoken_connector -> 8 5 1
 ————————————————————————————————Docker Compose—————————————————————————————————————
 安装 小雅及全家桶 -> 7 1
 卸载 小雅及全家桶 -> 7 2
 ——————————————————————————————————————系统工具——————————————————————————————————————
-查看系统磁盘挂载 -> 8 5
+查看系统磁盘挂载 -> 8 6
 ———————————————————————————————————————其他———————————————————————————————————————
 一次性运行 小雅助手（xiaoyahelper）-> 4 2
 创建/删除 定时同步更新数据（小雅alist启动时拉取的数据）-> 1 4
-AI老G 安装脚本 -> 8 7
+AI老G 安装脚本 -> 8 8
 账号管理 -> 1 5
 ```
 
@@ -159,6 +163,7 @@ Docker启动容器名称设置 -> 9 1
 开启/关闭 磁盘容量检测 -> 9 4
 开启/关闭 小雅连通性检测 -> 9 5
 Docker镜像源选择 -> 9 6
+非可选网络模式容器默认网络模式 -> 9 7
 ```
 
 ## 相关地址
@@ -243,6 +248,8 @@ Docker镜像源选择 -> 9 6
 - [`strm`文件生成](https://xiaoyaliu.notion.site/strm-2c8d136ceb37445fb6c0222eafb966ce): 小雅官方提供的一键生成`strm`文件脚本
 - [monlor/docker-xiaoya](https://github.com/monlor/docker-xiaoya): Docker Compose 方式一键部署小雅全家桶
 - [907739769/xiaoya-sync](https://github.com/907739769/xiaoya-sync): Java 编写的小雅元数据爬虫
+- [sjtuross/StrmAssistant](https://github.com/sjtuross/StrmAssistant): Strm Assistant for Emby
+- [suixing8/xiaoya-alist-search](https://github.com/suixing8/xiaoya-alist-search): 不安装Emby的情况下，在iOS Fileball上使用全局搜索和直接观看
 - [AI老G 脚本推荐](https://b23.tv/3Zo0IvD)
   - 小雅全家桶安装脚本（支持AI老G版小雅Alist安装，Jellyfin安装，快速Emby安装）:
     ```shell
